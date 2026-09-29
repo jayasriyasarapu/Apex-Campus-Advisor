@@ -1,0 +1,114 @@
+[
+  {
+    "id": "overview_01",
+    "category": "About & Accreditation",
+    "title": "College Overview and Accreditation",
+    "content": "Apex Institute of Technology & Science (AITS) is a premier autonomous engineering and management institution established in 1998. The university is accredited with an 'A++' Grade by NAAC and holds approval from the AICTE. In the latest NIRF Engineering Rankings, AITS is ranked 28th nationwide. The lush green campus spans across 65 acres with state-of-the-art academic blocks, research centers, and residential facilities.",
+    "tags": ["ranking", "nirf", "naac", "accreditation", "campus", "about", "established"]
+  },
+  {
+    "id": "admissions_ug_01",
+    "category": "Admissions",
+    "title": "Undergraduate (B.Tech / BCA) Admission & Eligibility",
+    "content": "For B.Tech admissions, candidates must have passed 10+2 (Higher Secondary) with Physics, Mathematics, and Chemistry/Computer Science with an aggregate of at least 60% (55% for reserved categories). Admissions are primarily based on JEE Main scores or the university's entrance test (AITS-CET). Lateral entry into the 3rd semester is available for 3-year Diploma holders with at least 60% marks. BCA applicants require 10+2 with Mathematics or Computer Applications with minimum 50% marks.",
+    "tags": ["btech", "bca", "undergraduate", "eligibility", "jee", "cet", "cutoff", "percentage", "admission criteria"]
+  },
+  {
+    "id": "admissions_pg_02",
+    "category": "Admissions",
+    "title": "Postgraduate (M.Tech / MBA / MCA) Admission & Eligibility",
+    "content": "M.Tech admissions require a relevant B.E./B.Tech degree with a minimum CGPA of 6.5 or 60% aggregate marks, along with a valid GATE score. Non-GATE candidates must qualify through the departmental written test and interview. For MBA admissions, a Bachelor's degree in any discipline with at least 50% marks is required, plus valid scores in CAT, MAT, XAT, or CMAT, followed by Group Discussion and Personal Interview (GD-PI). MCA requires a BCA or B.Sc in Computer Science/IT with at least 50% marks.",
+    "tags": ["mtech", "mba", "mca", "postgraduate", "gate", "cat", "mat", "eligibility", "masters"]
+  },
+  {
+    "id": "admissions_dates_03",
+    "category": "Admissions",
+    "title": "Important Admission Deadlines and Schedule",
+    "content": "Online applications for the Fall 2026 Academic Session open on March 15 and close on June 30. The AITS-CET entrance exam is conducted in the second week of July. Merit lists and round 1 counseling results are declared by July 25. Document verification and fee payment for confirmed seats conclude on August 10. The orientation program and commencement of classes start on August 18.",
+    "tags": ["deadlines", "dates", "schedule", "counseling", "application form", "orientation", "last date"]
+  },
+  {
+    "id": "programs_ug_01",
+    "category": "Programs & Courses",
+    "title": "Undergraduate Degree Programs Offered",
+    "content": "AITS offers 4-year full-time B.Tech programs in Computer Science & Engineering (CSE), Artificial Intelligence & Data Science (AI & DS), Cyber Security, Electronics & Communication (ECE), Electrical Engineering (EE), and Mechanical Engineering (ME). Additionally, a 3-year BCA (Bachelor of Computer Applications) and a 3-year B.Sc in Data Analytics are available. CSE and AI & DS are the most popular departments.",
+    "tags": ["programs", "courses", "branches", "cse", "computer science", "artificial intelligence", "data science", "ece", "mechanical"]
+  },
+  {
+    "id": "programs_pg_02",
+    "category": "Programs & Courses",
+    "title": "Postgraduate and Doctoral Programs",
+    "content": "Postgraduate programs include 2-year M.Tech in Software Engineering, VLSI Design, and Thermal Engineering; 2-year MBA with specializations in Finance, Marketing, Human Resources, and Business Analytics; and a 2-year MCA. Ph.D. research fellowships are offered across all major engineering sciences and management disciplines with funded stipends up to ₹35,000 per month.",
+    "tags": ["postgraduate", "mtech", "mba", "phd", "specializations", "fellowship", "stipend"]
+  },
+  {
+    "id": "fees_btech_01",
+    "category": "Fees & Financing",
+    "title": "B.Tech and BCA Tuition Fee Structure",
+    "content": "Tuition fee for B.Tech in Computer Science and AI & DS is ₹1,10,000 per semester (₹2,20,000 per annum). For other engineering branches (ECE, EE, Mechanical), the tuition fee is ₹90,000 per semester. BCA tuition fee is ₹45,000 per semester. Additional one-time charges include an Admission & Registration Fee of ₹10,000 and a refundable Caution Deposit of ₹5,000. Semester exam fees are ₹2,500 per term.",
+    "tags": ["fees", "tuition", "btech fee", "bca fee", "charges", "deposit", "cost", "semester fee"]
+  },
+  {
+    "id": "fees_hostel_02",
+    "category": "Fees & Financing",
+    "title": "Hostel and Mess Charges",
+    "content": "Campus accommodation fees vary by room type: Non-AC Double Sharing room is ₹42,000 per semester; AC Double Sharing room is ₹58,000 per semester; Single occupancy AC room is ₹75,000 per semester. All hostel charges include 4 meals daily (breakfast, lunch, evening tea/snacks, and dinner), 24/7 high-speed WiFi, laundry service, and water/electricity utilities. A one-time refundable hostel security deposit of ₹8,000 is collected at check-in.",
+    "tags": ["hostel", "accommodation", "mess", "food", "living cost", "hostel fee", "room charges"]
+  },
+  {
+    "id": "scholarships_01",
+    "category": "Scholarships & Financial Aid",
+    "title": "Merit and Need-Based Scholarships",
+    "content": "AITS offers generous financial scholarships: 1) Chairman's Merit Scholarship: 100% tuition waiver for students scoring above 95% in 10+2 or rank under 5,000 in JEE Main; 2) Dean's Excellence Award: 50% tuition waiver for 90-95% in 10+2; 3) Sports Quota Scholarship: Up to 75% fee concession for national/state level medalists; 4) Need-Based Financial Aid: Full or partial fee relief for students with family annual income under ₹3.5 Lakhs. Applications for scholarships open during counseling.",
+    "tags": ["scholarship", "financial aid", "waiver", "concession", "sports quota", "merit scholarship", "free education"]
+  },
+  {
+    "id": "placements_stats_01",
+    "category": "Placements & Internships",
+    "title": "Placement Statistics and Top Recruiters",
+    "content": "The College Career & Placement Cell boasts a 94.8% placement record for the 2025-2026 graduating batch. The Highest International Package was ₹54 LPA (offered by Atlassian), and the Highest Domestic Package was ₹44 LPA (offered by Microsoft). The Overall Average Package stood at ₹11.2 LPA, while the CSE/AI batch average was ₹14.8 LPA. Over 220 tier-1 companies participated, including Google, Microsoft, Amazon, Cisco, Goldman Sachs, TCS, Infosys, and Deloitte.",
+    "tags": ["placements", "jobs", "highest package", "average package", "recruiters", "microsoft", "google", "salary", "lpa", "ctc"]
+  },
+  {
+    "id": "placements_internships_02",
+    "category": "Placements & Internships",
+    "title": "Student Internships and Industry Collaborations",
+    "content": "Mandatory 8-week summer internships are integrated into the 6th semester curriculum. The college has formal MoUs and Centers of Excellence with Intel, IBM, and AWS Academy. In 2025, over 450 students secured paid internships with average stipends of ₹35,000 per month and highest stipend reaching ₹1,00,000 per month from Adobe. Pre-Placement Offers (PPOs) were extended to 38% of interned students.",
+    "tags": ["internships", "stipend", "ppo", "industry collaboration", "mou", "aws", "ibm", "training"]
+  },
+  {
+    "id": "facilities_library_01",
+    "category": "Campus & Facilities",
+    "title": "Central Library and Digital Resources",
+    "content": "The Dr. APJ Abdul Kalam Central Library spans 3 floors and operates from 8:00 AM to 11:00 PM daily (24/7 during semester examinations). It houses over 120,000 physical volumes, 350 national and international print journals, and subscriptions to digital libraries including IEEE Xplore, ScienceDirect, SpringerLink, and ACM Digital Library. Over 100 dedicated computer workstations are provided in the e-learning wing.",
+    "tags": ["library", "books", "ieee", "journals", "reading room", "timing", "digital library"]
+  },
+  {
+    "id": "facilities_campus_02",
+    "category": "Campus & Facilities",
+    "title": "Labs, Sports, Healthcare and Cafeteria",
+    "content": "The campus includes modern facilities: 1) Advanced High-Performance Computing & Robotics Lab with GPU clusters; 2) Sports Complex featuring an indoor badminton court, Olympic-size swimming pool, synthetic tennis courts, and floodlit cricket ground; 3) 24/7 Health Center with resident doctors and ambulance service; 4) Multi-cuisine student cafeteria and food court with Subway, Nescafe, and healthy dining outlets.",
+    "tags": ["facilities", "sports", "gym", "swimming pool", "health center", "medical", "hospital", "cafeteria", "canteen", "labs"]
+  },
+  {
+    "id": "academic_calendar_01",
+    "category": "Academics & Rules",
+    "title": "Academic Calendar, Grading System and Attendance Policy",
+    "content": "Academic sessions are split into Autumn (August to December) and Spring (January to May) semesters. Evaluation uses a 10-point Cumulative Grade Point Average (CGPA) relative grading scale. Minimum 75% attendance in lectures and practical sessions is strictly required to appear for end-semester examinations; medical exemptions allow up to 10% relaxation upon approval from the Dean of Student Affairs.",
+    "tags": ["attendance", "grading", "cgpa", "exam rules", "semester", "calendar", "passing marks", "gpa"]
+  },
+  {
+    "id": "clubs_festivals_01",
+    "category": "Student Life & Clubs",
+    "title": "Student Clubs and Annual Festivals",
+    "content": "Student life is vibrant with over 30 student-run clubs. Popular technical clubs include 'ByteCode' (competitive coding), 'AeroMech' (drones & robotics), and 'HackClub'. Cultural clubs encompass music, dramatics, photography, and literary society. The annual national techno-management festival 'InnovateX' is held in February with prizes over ₹15 Lakhs, and the cultural festival 'Aura' takes place in late October.",
+    "tags": ["clubs", "fest", "innovatex", "aura", "activities", "hackathon", "events", "culture", "robotics club"]
+  },
+  {
+    "id": "contact_helpline_01",
+    "category": "Contact & Support",
+    "title": "Admissions Office and Campus Contact Information",
+    "content": "Contact information: Central Admissions Helpline: +91 (080) 4567-8900 / +91 (080) 4567-8901; Email: admissions@apexinstitute.edu / query@apexinstitute.edu. Registrar Office: registrar@apexinstitute.edu. Campus Address: Apex Institute of Technology & Science, Tech Valley Road, Knowledge City, Bangalore, Karnataka - 560100. Office visiting hours: Monday to Saturday, 9:00 AM to 5:00 PM.",
+    "tags": ["contact", "email", "phone", "helpline", "address", "location", "bangalore", "hours", "office"]
+  }
+]

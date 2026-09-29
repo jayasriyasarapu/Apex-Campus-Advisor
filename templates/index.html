@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Campus Advisor | College Information Chatbot (RAG)</title>
+  <meta name="description" content="AI-powered College Information Chatbot using Retrieval-Augmented Generation (RAG) for Apex Institute of Technology & Science.">
+  
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <!-- Background Glow & Grid Orbs -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-grid-overlay"></div>
+
+  <div class="app-layout">
+    <!-- Top Navigation Header -->
+    <header class="app-header">
+      <div class="header-brand">
+        <div class="brand-avatar">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="brand-info">
+          <div class="brand-title-row">
+            <h1>Apex Campus Advisor</h1>
+            <span class="badge badge-rag"><i class="fa-solid fa-bolt"></i> RAG Active</span>
+          </div>
+          <p class="brand-subtitle">Apex Institute of Technology & Science • Autonomous AI Advisor</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="btn-open-knowledge" class="btn btn-secondary" title="View Indexed College Documents">
+          <i class="fa-solid fa-database"></i>
+          <span>Knowledge Base</span>
+        </button>
+        <button id="btn-open-rag-guide" class="btn btn-secondary" title="Learn How RAG Works">
+          <i class="fa-solid fa-circle-nodes"></i>
+          <span>How RAG Works</span>
+        </button>
+        <button id="btn-clear-chat" class="btn btn-icon" title="Clear Chat History">
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="chat-main">
+      <!-- Chat Messages Scrollable Area -->
+      <div id="chat-messages" class="chat-messages-container">
+        <!-- Welcome Hero Card -->
+        <div class="welcome-card" id="welcome-card">
+          <div class="welcome-badge">
+            <i class="fa-solid fa-sparkles"></i> Retrieval-Augmented Generation Demo
+          </div>
+          <h2>Welcome to AITS Campus Information Bot</h2>
+          <p>
+            Ask anything about our admissions, courses, fee structures, placements, scholarships, 
+            hostels, and campus life. Answers are grounded in official institutional records using 
+            <strong>TF-IDF Vector Space Retrieval</strong> and <strong>Cosine Similarity Ranking</strong>.
+          </p>
+
+          <div class="quick-stats-grid">
+            <div class="stat-pill">
+              <i class="fa-solid fa-award"></i>
+              <div>
+                <span class="stat-val">NAAC A++</span>
+                <span class="stat-label">Accreditation</span>
+              </div>
+            </div>
+            <div class="stat-pill">
+              <i class="fa-solid fa-ranking-star"></i>
+              <div>
+                <span class="stat-val">NIRF #28</span>
+                <span class="stat-label">National Rank</span>
+              </div>
+            </div>
+            <div class="stat-pill">
+              <i class="fa-solid fa-briefcase"></i>
+              <div>
+                <span class="stat-val">₹54 LPA</span>
+                <span class="stat-label">Highest Package</span>
+              </div>
+            </div>
+            <div class="stat-pill">
+              <i class="fa-solid fa-building-columns"></i>
+              <div>
+                <span class="stat-val">65 Acres</span>
+                <span class="stat-label">Hi-Tech Campus</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Suggested Prompts -->
+          <div class="suggestions-section">
+            <span class="suggestions-label"><i class="fa-regular fa-lightbulb"></i> Try asking:</span>
+            <div class="suggestion-chips">
+              <button class="chip" data-prompt="What is the tuition fee structure for B.Tech Computer Science?">
+                💰 B.Tech CSE Fees
+              </button>
+              <button class="chip" data-prompt="What are the placement statistics, average package, and highest package?">
+                🏆 Placements & Packages
+              </button>
+              <button class="chip" data-prompt="What are the admission eligibility criteria and entrance exams for B.Tech?">
+                🎓 B.Tech Admission Criteria
+              </button>
+              <button class="chip" data-prompt="What scholarships and fee waivers are available for students?">
+                🎁 Scholarships & Aid
+              </button>
+              <button class="chip" data-prompt="Tell me about the hostel rooms, mess charges, and food facilities.">
+                🏠 Hostel & Mess Charges
+              </button>
+              <button class="chip" data-prompt="What are the important dates and deadlines for Fall 2026 admissions?">
+                📅 Admission Deadlines
+              </button>
+              <button class="chip" data-prompt="What sports, labs, and library facilities are available on campus?">
+                🏀 Sports & Library Facilities
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Chat Input Bar -->
+      <footer class="chat-input-wrapper">
+        <form id="chat-form" class="chat-form">
+          <div class="input-controls-bar">
+            <div class="topk-selector">
+              <label for="topk-select"><i class="fa-solid fa-sliders"></i> Retrieval Depth:</label>
+              <select id="topk-select" title="Number of knowledge chunks retrieved">
+                <option value="2">Top 2 Chunks</option>
+                <option value="3" selected>Top 3 Chunks (Balanced)</option>
+                <option value="5">Top 5 Chunks (Comprehensive)</option>
+              </select>
+            </div>
+            <div class="engine-badge" id="engine-status">
+              <span class="pulse-dot"></span> Vector Retriever Ready
+            </div>
+          </div>
+
+          <div class="input-row">
+            <textarea 
+              id="user-input" 
+              placeholder="Ask a question about admissions, fees, hostel, placements, courses..." 
+              rows="1" 
+              required
+              autocomplete="off"
+            ></textarea>
+            <button type="submit" id="btn-send" class="btn btn-primary" title="Send Question (Enter)">
+              <i class="fa-solid fa-arrow-up"></i>
+            </button>
+          </div>
+          <div class="input-footer-hint">
+            <span>Press <kbd>Enter</kbd> to send, <kbd>Shift + Enter</kbd> for new line • Powered by RAG</span>
+          </div>
+        </form>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Modal: Knowledge Base Catalog -->
+  <div id="modal-knowledge" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <i class="fa-solid fa-database modal-icon"></i>
+          <div>
+            <h3>Indexed College Knowledge Base</h3>
+            <p id="knowledge-summary">Loading document statistics...</p>
+          </div>
+        </div>
+        <button class="modal-close" data-close="modal-knowledge" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="knowledge-categories-list" class="categories-accordion">
+          <!-- Populated dynamically via JavaScript -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-reload-kb" class="btn btn-secondary">
+          <i class="fa-solid fa-arrows-rotate"></i> Re-index Documents
+        </button>
+        <button class="btn btn-primary" data-close="modal-knowledge">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer: How RAG Works Explainer -->
+  <div id="drawer-rag-guide" class="drawer-backdrop" aria-hidden="true">
+    <div class="drawer-card">
+      <div class="drawer-header">
+        <div class="drawer-title">
+          <i class="fa-solid fa-circle-nodes"></i>
+          <h3>How This RAG Project Works</h3>
+        </div>
+        <button class="modal-close" data-close="drawer-rag-guide" aria-label="Close drawer">&times;</button>
+      </div>
+      <div class="drawer-body">
+        <p class="drawer-intro">
+          <strong>Retrieval-Augmented Generation (RAG)</strong> solves LLM hallucinations by grounding the AI in external, verified factual data before generating a response.
+        </p>
+
+        <div class="rag-pipeline-steps">
+          <div class="pipeline-step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>Knowledge Chunking & Ingestion</h4>
+              <p>Institutional college data (admissions, fees, placements, hostel) is parsed into granular passages stored in JSON with tags and categories.</p>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>TF-IDF Vector Space Modeling</h4>
+              <p>Each chunk is tokenized and transformed into a high-dimensional TF-IDF vector with sublinear term-frequency scaling and L2 normalization using pure NumPy.</p>
+              <code>tf_idf = (1 + log(tf)) * log((1 + N)/(1 + df))</code>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>Cosine Similarity Retrieval</h4>
+              <p>When you ask a question, the query is vectorized and compared against all chunk vectors via dot product cosine similarity with hybrid keyword boosting.</p>
+              <code>cosine_similarity = dot(q_vec, doc_vec)</code>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4>Prompt Augmentation & Synthesis</h4>
+              <p>The top-K most relevant chunks are injected as verified context into the prompt. The response is synthesized with exact facts, numbers, and source citations.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rag-callout">
+          <i class="fa-solid fa-lightbulb"></i>
+          <div>
+            <strong>Interactive Inspection:</strong>
+            <p>After any message, click the <em>"Inspect RAG Pipeline"</em> button below the response to view the exact similarity scores and retrieved chunks!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
